@@ -1,7 +1,5 @@
-import NIOSSL
 import Fluent
 import FluentPostgresDriver
-import Leaf
 import Vapor
 
 // configures your application
@@ -11,8 +9,10 @@ public func configure(_ app: Application) throws {
         port: 5432,
         username: "postgres",
         password: "aboba",
-        database: "AbobaDB"
+        database: "users"
     ), as: .psql)
+    
+    app.logger.logLevel = .info
     
     app.migrations.add(CreateUser())
     try app.autoMigrate().wait()
