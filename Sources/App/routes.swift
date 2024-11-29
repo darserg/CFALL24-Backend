@@ -2,19 +2,12 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async throws in
-        try await req.view.render("index", ["title": "Hello Vapor!"])
-    }
-
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
+    let userController = UserController()
     
-    app.get("user") { req -> EventLoopFuture<User> in
-        let user = User(id: 1, login: "chert", password: "chert")
-        
-        return req.eventLoop.makeSucceededFuture(user)
-    }
-
-    try app.register(collection: TodoController())
+    app.get("users", use: userController.getAll)
+    app.post("users", use: userController.create)
+    app.put("users", ":userID", use: userController.update)
+    app.delete("users", ":userID", use: userController.delete)
+    app.get("users", ":userID", use: userController.getOne)
 }
+ 
