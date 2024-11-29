@@ -9,6 +9,12 @@ func routes(_ app: Application) throws {
     app.get("hello") { req async -> String in
         "Hello, world!"
     }
+    
+    app.get("user") { req -> EventLoopFuture<User> in
+        let user = User(id: 1, login: "chert", password: "chert")
+        
+        return req.eventLoop.makeSucceededFuture(user)
+    }
 
     try app.register(collection: TodoController())
 }
