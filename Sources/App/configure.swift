@@ -12,7 +12,21 @@ public func configure(_ app: Application) throws {
         database: "users"
     ), as: .psql)
     
-    app.logger.logLevel = .info
+    app.databases.use(.postgres(
+        hostname: "localhost",
+        port: 5432,
+        username: "posgres",
+        password: "aboba",
+        database: "preferences"
+    ), as: .psql)
+    
+    app.databases.use(.postgres(
+        hostname: "localhost",
+        port: 5432,
+        username: "postgres",
+        password: "aboba",
+        database: "questions"
+    ), as: .psql)
     
     app.migrations.add(CreateUser())
     try app.autoMigrate().wait()
