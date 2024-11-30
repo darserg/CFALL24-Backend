@@ -17,13 +17,17 @@ final class Question: Model, Content {
     var category: String
     
     @Field(key: "answer")
-    var answer: Int
+    var answer: String
+    
+    @Field(key: "number")
+    var number: Int
     
     init() {}
     
-    init (id: UUID? = nil, category: String, anwer: Int) {
+    init (id: UUID? = nil, category: String, anwer: String, number: Int) {
         self.id = id
         self.category = category
         self.answer = answer
+        self.number = number
     }
 }

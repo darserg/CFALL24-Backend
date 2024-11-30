@@ -13,7 +13,8 @@ struct CreateQuestion: Migration {
         database.schema("questions")
             .id()
             .field("category", .string, .required)
-            .field("answer", .int, .required)
+            .field("answer", .string, .required)
+            .field("number", .int, .required)
             .create()
     }
     
