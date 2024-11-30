@@ -17,8 +17,8 @@ struct PreferenceController: RouteCollection {
         preferences.get(":prefID", use: getOne)
     }
     
-    func getAll(req: Request) -> EventLoopFuture<[Question]> {
-        Question.query(on: req.db).all()
+    func getAll(req: Request) -> EventLoopFuture<[Preference]> {
+        Preference.query(on: req.db).all()
     }
     
     func create(req: Request) throws -> EventLoopFuture<Preference> {
