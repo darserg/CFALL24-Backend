@@ -19,15 +19,11 @@ final class Question: Model, Content {
     @Field(key: "answer")
     var answer: String
     
-    @Field(key: "number")
-    var number: Int
-    
     init() {}
     
-    init (id: UUID? = nil, category: String, anwer: String, number: Int) {
+    init (id: UUID? = nil, category: String, answer: String) {
         self.id = id
         self.category = category
         self.answer = answer
-        self.number = number
     }
 }

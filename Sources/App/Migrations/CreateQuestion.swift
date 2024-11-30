@@ -14,7 +14,6 @@ struct CreateQuestion: Migration {
             .id()
             .field("category", .string, .required)
             .field("answer", .string, .required)
-            .field("number", .int, .required)
             .create()
     }
     
