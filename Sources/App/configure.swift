@@ -17,7 +17,7 @@ public func configure(_ app: Application) throws {
         port: 5432,
         username: "posgres",
         password: "aboba",
-        database: "preferences"
+        database: "preference"
     ), as: .psql)
     
     app.databases.use(.postgres(
