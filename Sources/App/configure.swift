@@ -25,7 +25,7 @@ public func configure(_ app: Application) throws {
         port: 5432,
         username: "postgres",
         password: "aboba",
-        database: "questions"
+        database: "question"
     ), as: .psql)
     
     app.migrations.add(CreateUser())
