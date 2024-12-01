@@ -23,4 +23,4 @@ swift run
 ngrok http 8080
 ```
 Копируем ссылку с ngrok
-6. В веб-приложении нужно зайти в файл [Question.cs](https://github.com/Ezhkin-Kot/CFALL24-Frontend/blob/main/Client/Client/Question.cs) и поменять переменную apiUrl на "<ссылка из ngrok>/users" и переменную answersUrl на "<ссылка из ngrok>/questions"
+6. В веб-приложении нужно зайти в файл [Question.cs](https://github.com/Ezhkin-Kot/CFALL24-Frontend/) [AuthUser.cs](https://github.com/Ezhkin-Kot/CFALL-24-Frontend) и поменять переменную apiUrl на "<ссылка из ngrok>/users" и переменную answersUrl на "<ссылка из ngrok>/questions"
